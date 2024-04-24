@@ -1,0 +1,60 @@
+<%- include('layouts/header',{isLoggedIn:isLoggedIn}); -%>
+<main>
+<!-- <div class="hero-image">
+<img src="images/hero.jpeg" width="200px" alt="hero image"/> -->
+<% if (status == "success") { %> 
+    <%- include('../alerts/success', { message: message }) -%> 
+<%} else if(status == "error") {%> 
+    <%- include('../alerts/error', { message: message }) -%> 
+<%}%>
+
+<div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="images/hero.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="col-md-4">
+                    <img src="images/hero2.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="col-md-4">
+                    <img src="images/hero3.webp" class="d-block w-100" alt="...">
+                </div>
+                
+
+            </div>
+        </div>
+        <!-- Add more carousel items as needed -->
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- </div> -->
+<div class="content section">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae blanditiis non officiis, aliquam tempora dolor voluptatum provident? Nemo accusamus quos architecto molestias placeat, necessitatibus nostrum. Quisquam illum consectetur fugiat odit quo voluptates laudantium ipsam doloribus eos iusto sed eligendi molestiae, quidem alias cumque minus, pariatur dicta unde qui exercitationem a aperiam labore voluptatibus? Error vitae iusto sapiente accusantium consequatur repellendus totam voluptatum facilis. Perspiciatis, nostrum repellat cupiditate labore nobis porro dolorem veritatis. Deleniti at qui laborum nostrum tenetur quis sunt nulla et quibusdam blanditiis repudiandae fugiat libero, consectetur perspiciatis numquam necessitatibus autem tempore atque porro? Natus reprehenderit cumque, eligendi dolorum animi neque dignissimos magni odit atque exercitationem recusandae distinctio fugit officiis eius deserunt iste, minima suscipit voluptatem, temporibus odio. Quae quidem perferendis odio natus dolorum corrupti enim consequuntur porro dolores cum ab, ratione perspiciatis, quaerat aperiam voluptate nam ipsam in tempore? Perspiciatis fuga possimus, sint inventore beatae nostrum vitae ea officiis repudiandae? Quaerat, vero! Debitis porro consectetur voluptatibus! Natus, neque velit. Suscipit aliquam iure voluptatem libero et, aliquid quos dicta vitae eos dolore voluptate sunt nihil fugit minima ipsam mollitia, quisquam odit rem sequi. Laudantium ad voluptate quas necessitatibus facere nobis ab, inventore accusamus praesentium qui voluptates porro unde! Odio.</p>
+</div>
+<div id="about" class="section">
+    <h2>About</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio id provident ipsa accusamus excepturi autem non sequi qui. Necessitatibus aperiam quos omnis optio aspernatur qui corrupti corporis voluptate magnam laboriosam, asperiores, numquam ea, aliquid officiis expedita deserunt quo voluptas non mollitia! Dolorum aspernatur, harum deserunt ipsam est iste delectus. Doloribus!</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae blanditiis non officiis, aliquam tempora dolor voluptatum provident? Nemo accusamus quos architecto molestias placeat, necessitatibus nostrum. Quisquam illum consectetur fugiat odit quo voluptates laudantium ipsam doloribus eos iusto sed eligendi molestiae, quidem alias cumque minus, pariatur dicta unde qui exercitationem a aperiam labore voluptatibus? Error vitae iusto sapiente accusantium consequatur repellendus totam voluptatum facilis. Perspiciatis, nostrum repellat cupiditate labore nobis porro dolorem veritatis.</p>
+</div>
+<div id="team" class="section">
+    <h2>Team</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio id provident ipsa accusamus excepturi autem non sequi qui. Necessitatibus aperiam quos omnis optio aspernatur qui corrupti corporis voluptate magnam laboriosam, asperiores, numquam ea, aliquid officiis expedita deserunt quo voluptas non mollitia! Dolorum aspernatur, harum deserunt ipsam est iste delectus. Doloribus! consectetur adipisicing elit. Recusandae blanditiis non officiis, aliquam tempora dolor voluptatum provident? Nemo accusamus quos architecto molestias placeat, necessitatibus nostrum. Quisquam illum consectetur fugiat odit quo voluptates laudantium ipsam doloribus eos iusto sed eligendi molestiae, quidem alias cumque minus, pariatur dicta unde qui exercitationem a aperiam labore voluptatibus? Error vitae iusto sapiente accusantium consequatur repellendus totam voluptatum facilis. Perspiciatis, nostrum repellat cupiditate labore nobis porro dolorem veritatis.</p>
+</div>
+<div id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio id provident ipsa accusamus excepturi autem non sequi qui. Necessitatibus aperiam quos omnis optio aspernatur qui corrupti corporis voluptate magnam laboriosam, asperiores, numquam ea, aliquid officiis expedita deserunt quo voluptas non mollitia! Dolorum aspernatur, harum deserunt ipsam est iste delectus. Doloribus!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae blanditiis non officiis, aliquam tempora dolor voluptatum provident? Nemo accusamus quos architecto molestias placeat, necessitatibus nostrum. Quisquam illum consectetur fugiat odit quo voluptates laudantium ipsam doloribus eos iusto sed eligendi molestiae, quidem alias cumque minus, pariatur dicta unde qui exercitationem a aperiam labore voluptatibus? Error vitae iusto sapiente accusantium consequatur repellendus totam voluptatum facilis. Perspiciatis, nostrum repellat cupiditate labore nobis porro dolorem veritatis.</p>
+</div>
+</main>
+<%- include('layouts/footer'); -%>

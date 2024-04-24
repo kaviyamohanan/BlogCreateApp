@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.2/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <title>Ripple Pages.com</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <script
+      src="/tinymce/js/tinymce/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+    <link rel="fav icon" href="images/logo/favicon.png" />
+  </head>
+  <body>
+    <header><h1>Ripple Pages</h1></header>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/logo/logo.png" /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <% if (isAdmin == true) { %>
+        <span class="admin_name">Welcome Admin</span>
+        <% }else{ %>
+        <span class="admin_name">Welcome User</span>
+        <% } %>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul
+            class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+            style="--bs-scroll-height: 100px"
+          >
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <% if (isAdmin == true) { %>
+            <li class="nav-item">
+              <a href="/create_post" class="nav-link"> Create New Page </a>
+            </li>
+            <% }%>
+
+            <li class="nav-item">
+              <a href="/view_all_pages" class="nav-link"> View All Pages </a>
+            </li>
+            <% if (pages && pages.length > 0) { %> <%
+            pages.forEach((page,index)=> { %> <% if(index < 3) { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/view_page/<%= page._id %>"
+                ><%= page.title %></a
+              >
+            </li>
+            <% }}); %> <% } %> <% if (pages && pages.length > 3) { %>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                More Pages
+              </a>
+              <ul class="dropdown-menu">
+                <% pages.slice(3).forEach(page => { %>
+                <li>
+                  <a class="dropdown-item" href="/view_page/<%= page._id %>"
+                    ><%= page.title %></a
+                  >
+                </li>
+                <% }); %>
+              </ul>
+            </li>
+            <% } %>
+            <!-- <li class="nav-item">
+                <a href="/create_post" class="nav-link">
+                    Admin Panel
+                  </a>              
+             </li> -->
+            <li class="nav-item">
+              <a href="/logout" class="nav-link"> Logout </a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

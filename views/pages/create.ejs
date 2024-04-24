@@ -1,0 +1,48 @@
+<main class="create_page">
+  <% if (status == "success") { %> <%- include('../alerts/success', { message:
+  message }) -%> <%} else if(status == "error") {%> <%-
+  include('../alerts/error', { message: message }) -%> <%}%>
+  <h1>Create a New Page</h1>
+
+  <form action="/post_submit" method="POST" enctype="multipart/form-data">
+    <div>
+      <label for="title">Page Title:</label>
+      <input type="text" name="title" id="title" required />
+    </div>
+    <!-- Image Upload Field -->
+    <div>
+      <label for="image">Hero Image:</label>
+      <input type="file" name="image" id="image" accept="image/*" required />
+    </div>
+
+    <!-- TinyMCE Editor -->
+    <div>
+      <label for="content">Content:</label>
+      <textarea id="content" name="content"></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div>
+      <button type="submit">Create Post</button>
+    </div>
+  </form>
+
+  <script>
+    // Initialize TinyMCE
+    tinymce.init({
+      selector: "textarea#content",
+      // other configurations
+      plugins:
+        "advlist lists link image fullscreen insertdatetime media table",
+    });
+
+    document.querySelector("form").addEventListener("submit", function (event) {
+      const editorContent = tinymce.get("content").getContent();
+
+      if (editorContent.trim() === "") {
+        alert("Content cannot be empty"); // You can display a more user-friendly message
+        event.preventDefault(); // Prevent form submission
+      }
+    });
+  </script>
+</main>

@@ -1,0 +1,54 @@
+
+<main>
+    <% if (status == "success") { %> 
+        <%- include('../alerts/success', { message: message }) -%> 
+    <%} else if(status == "error") {%> 
+        <%- include('../alerts/error', { message: message }) -%> 
+    <%}%>
+    <h1 class="mb-4">All Pages</h1>
+
+    <% if (pages.length > 0) { %>
+        <ul class="list-group">
+            <% pages.forEach((page, index) => { %>
+                <% const colors = [ '#d9f2e0', '#ddfaf8', '#f2dade']; %>
+                <li class="list-group-item border-start-0 border-end-0 border-top-0" style="background-color: <%= colors[index % colors.length] %>">
+                    <div class="media">
+                        <img src="<%= page.imagePath %>" class="mr-3" alt="Page Image" style="width: 100px;">
+                        <div class="media-body">
+                            <h5 class="mt-0"><%= page.title %></h5>
+                            <!-- Use <%- %> to unescape HTML content -->
+                            <p><%- getFirstTwoLines(page.content) %></p>
+                            <div class="btn-group" role="group" aria-label="Page Actions">
+                              <!-- Edit button (visible for admin and logged-in users) -->
+                              <% if (isAdmin && isLoggedIn) { %>
+                                <a href="/edit_page/<%= page._id %>" class="btn btn-outline-primary">
+                                    <i class="bi bi-pencil"></i> Edit
+                                </a>
+                            <% } %>
+                            
+                            <!-- Delete button (visible for admin and logged-in users) -->
+                            <% if (isAdmin && isLoggedIn) { %>
+                                <a href="/delete_page/<%= page._id %>" class="btn btn-outline-danger">
+                                    <i class="bi bi-trash"></i> Delete
+                                </a>
+                            <% } %>
+                            <!-- View button -->
+                            <a href="/view_page/<%= page._id %>" class="btn btn-outline-success">
+                                <i class="bi bi-eye"></i> View
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No pages found.</p>
+    <% } %>
+
+    <% function getFirstTwoLines(content) {
+        // Split content into lines and get the first two lines
+        const lines = content.split('\n');
+        return lines.slice(0, 1).join('<br>'); // Display the lines with a line break
+    } %>
+</main>

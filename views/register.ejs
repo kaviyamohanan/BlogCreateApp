@@ -1,0 +1,79 @@
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-lg-8 col-xl-6 text-center">
+            <h2 class="mt-0">Sign Up</h2>
+            <hr class="divider" />
+        </div>
+    </div>
+    <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+        <div class="col-lg-6">
+<form id="RegisterForm" action="/register_submit" method="POST">
+                <!-- Name input-->
+    <div class="form-floating mb-3">
+        <label for="fname">First name</label>
+        <input class="form-control" id="fname" name="fname" type="text" placeholder="Enter first name..." data-sb-validations="required" />
+        <!-- <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div> -->
+    </div>
+     <!-- Name input-->
+     <div class="form-floating mb-3">
+        <label for="lname">Last name</label>
+
+        <input class="form-control" id="lname" name="lname" type="text" placeholder="Enter last name..." data-sb-validations="required" />
+        <!-- <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div> -->
+    </div>
+    <!-- Email address input-->
+    <div class="form-floating mb-3">
+        <label for="email">Email address</label>
+
+        <input class="form-control" id="email" name="email" type="email" placeholder="Email" data-sb-validations="required,email" />
+        <!-- <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div> -->
+    </div>
+    <!-- Phone number input-->
+    <div class="form-floating mb-3">
+        <label for="password">Password</label>
+
+        <input class="form-control" id="password" name="password" type="password" placeholder="Password" data-sb-validations="required" />
+        <!-- <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div> -->
+    </div>
+     <!-- Phone number input-->
+     <div class="form-floating mb-3">
+        <label for="role">Role</label>
+        <select class="form-select" id="role" name="role" data-sb-validations="required">
+            <option value="" selected disabled>Select a Role</option>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+        </select>
+        <!-- <div class="invalid-feedback" data-sb-feedback="role:required">A role is required.</div> -->
+    </div>
+
+    <!-- Submit success message-->
+    <!---->
+    <!-- This is what your users will see when the form-->
+    <!-- has successfully submitted-->
+    <div class="d-none" id="submitSuccessMessage">
+        <div class="text-center mb-3">
+            <div class="fw-bolder">Form submission successful!</div>
+            To activate this form, sign up at
+            <br />
+            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+        </div>
+    </div>
+    <!-- Submit error message-->
+    <!---->
+    <!-- This is what your users will see when there is-->
+    <!-- an error submitting the form-->
+    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+    <!-- Submit Button-->
+    <div class="d-grid"><button class="btn btn-primary btn-xl" id="submitButton" type="submit">Submit</button></div>
+    
+</form>
+   
+<div><a href="/login">Sign In</a></div>
+                        
+
+</div>
+</div>
+
+</div>
+

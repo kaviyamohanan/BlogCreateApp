@@ -1,0 +1,18 @@
+<%- include('layouts/adminHeader',{pages:pages, isAdmin: isAdmin, isLoggedIn: isLoggedIn}); -%>
+
+
+<% if (page == "view") { %> 
+    <%- include('pages/view', { status:status, message: message,pages:pages, isAdmin: isAdmin, isLoggedIn: isLoggedIn  }) -%>
+<%} else if (page == "create"){%> 
+    <%- include('pages/create', { status:status, message: message,pages:pages}) -%>
+
+<%} else if (page == "edit"){%> 
+     <%- include('pages/edit', { status:status, message: message,pageData:pageData }) -%>
+    
+<%} else if (page == "template"){%> 
+     <%- include('pages/template', { status:status, message: message,pages:pages,idPage:idPage }) -%>
+        
+<%}%> 
+       
+   
+<%- include('layouts/footer'); -%>

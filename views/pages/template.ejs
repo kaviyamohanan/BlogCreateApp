@@ -1,0 +1,19 @@
+<!-- views/view_page.ejs -->
+
+
+<main>
+ 
+
+    <% if (idPage) { %>
+        <div class="page-details">
+            <h1><%= idPage.title %></h1>
+            <img src="<%= idPage.imagePath %>" alt="Page Image" style="max-width: 400px;">
+            <p><%- idPage.content %></p>
+        </div>
+    <% } else { %>
+        <p>No page data available.</p>
+    <% } %>
+
+    <a href="/view_all_pages">Back to All Pages</a>
+</main>
+
